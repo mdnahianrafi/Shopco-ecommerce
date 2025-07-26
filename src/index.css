@@ -1,0 +1,32 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+/* Optional Global CSS */
+body {
+  overflow-x: hidden;
+}
+
+.satoshi-font {
+  font-family: "Satoshi", sans-serif;
+}
+.banner-bg {
+  background-image: url(./assets/banner.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.integral-font {
+  font-family: "Integral CF Regular", sans-serif;
+}
+
+.review-text {
+  max-height: 4.5rem; /* roughly 3 lines tall */
+  overflow: hidden;   /* hide anything beyond max-height */
+  opacity: 0.8;       /* slightly faded */
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+}
+.review-text.expanded {
+  max-height: 500px; /* large enough to show full text */
+  opacity: 1;
+}
