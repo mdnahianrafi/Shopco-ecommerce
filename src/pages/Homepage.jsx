@@ -32,7 +32,7 @@ const Homepage = () => {
                 garments, designed to bring out your individuality and cater
                 your sense of style.
               </p>
-              <button className=" ml-5 sm:ml-0 w-96 lg:w-52 h-[52px] bg-black text-white text-base rounded-4xl satoshi-font cursor-pointer shadow-xl active:shadow-xl/20">
+              <button className="ml-1 sm:ml-0 w-96 lg:w-52 h-[52px] bg-black text-white text-base rounded-4xl satoshi-font cursor-pointer shadow-xl active:shadow-xl/20">
                 Shop Now
               </button>
               <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-start pt-7 lg:pt-48">
