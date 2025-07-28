@@ -1,10 +1,7 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
-/* Optional Global CSS */
-body {
-  overflow-x: hidden;
-}
+
 
 .satoshi-font {
   font-family: "Satoshi", sans-serif;
@@ -30,3 +27,4 @@ body {
   max-height: 500px; /* large enough to show full text */
   opacity: 1;
 }
+

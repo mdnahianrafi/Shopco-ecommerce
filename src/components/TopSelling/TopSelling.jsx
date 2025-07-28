@@ -7,7 +7,7 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import all_product from "../../assets/Data/productData";
 
-const NewArrival = () => {
+const TopSelling = () => {
   const { all_product,top_selling, renderStars } = useContext(ShopContext);
 
   var settings = {
@@ -123,4 +123,4 @@ const NewArrival = () => {
   );
 };
 
-export default NewArrival;
+export default TopSelling;
