@@ -46,7 +46,7 @@ import p41 from "../product41.jpeg";
         id:1,
         name: "Half Sleev Black Olive T-shirt" ,
         price: 120,
-        rating : 5.0 ,
+        rating : 4.5 ,
         category: "casual" ,
         image: p1
     },

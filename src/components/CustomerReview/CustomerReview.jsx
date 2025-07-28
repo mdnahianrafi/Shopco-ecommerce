@@ -104,7 +104,7 @@ const CustomerReview = () => {
                   {item.review.length > 120 && (
                     <button
                       onClick={() => toggleReadMore(index)}
-                      className="text-blue-600 underline text-sm mt-1"
+                      className="text-blue-600 underline text-sm mt-1 cursor-pointer"
                     >
                       {expandedReviewIndex === index ? "Read Less" : "Read More"}
                     </button>

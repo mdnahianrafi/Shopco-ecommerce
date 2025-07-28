@@ -18,12 +18,12 @@ import Banner from "../components/Banner/Banner";
 const Homepage = () => {
   return (
     <>
-      <SignupBar />
+
 
       <section>
         <div className="bg-[#F2F0F1] lg:bg-[url('/images/banner.png')] bg-no-repeat bg-center bg-cover ">
           <div className="container ml-0  ">
-            <div className="w-full lg:w-1/2 py-10 lg:py-[63px]  sm:pl-8 lg:pl-24 relative">
+            <div className="w-full lg:w-1/2 py-10 lg:py-16  sm:pl-8 lg:pl-24 relative">
               <h1 className="text-center sm:text-start text-4xl md:text-5xl lg:text-5xl xl:text-6xl 2xl:text-[64px]  font-extrabold integral-font xl:pr-[50px] 2xl:pr-[100px] leading-10 lg:leading-16 ">
                 FIND CLOTHES THAT MATCHES YOUR STYLE
               </h1>
@@ -32,7 +32,7 @@ const Homepage = () => {
                 garments, designed to bring out your individuality and cater
                 your sense of style.
               </p>
-              <button className="ml-10 sm:ml-0 w-96 lg:w-52 h-[52px] bg-black text-white text-base rounded-4xl satoshi-font cursor-pointer shadow-xl active:shadow-xl/20">
+              <button className=" sm:ml-0 w-96 lg:w-52 h-[52px] bg-black text-white text-base rounded-4xl satoshi-font cursor-pointer shadow-xl active:shadow-xl/20">
                 Shop Now
               </button>
               <div className="flex flex-wrap lg:flex-nowrap justify-center lg:justify-start pt-7 lg:pt-48">
@@ -86,7 +86,7 @@ const Homepage = () => {
             </div>
           </div>
         </div>
-        <div className=" w-full py-6  lg:py-9  bg-black">
+        <div className=" w-full py-6  lg:py-10  bg-black">
           <div className="container mx-auto flex flex-wrap justify-between ">
             <img
               src={versace}

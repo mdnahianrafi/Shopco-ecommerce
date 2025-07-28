@@ -4,9 +4,11 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { ShopContext } from "../../contexts/ShopContext";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import all_product from "../../assets/Data/productData";
 
 const NewArrival = () => {
-  const { top_selling ,renderStars} = useContext(ShopContext);
+  const { all_product,top_selling, renderStars } = useContext(ShopContext);
 
   var settings = {
     dots: false,
@@ -15,7 +17,7 @@ const NewArrival = () => {
     slidesToShow: 4,
     slidesToScroll: 4,
     initialSlide: 0,
-     arrows: false, 
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -62,47 +64,51 @@ const NewArrival = () => {
               ? product.price - product.price * (product.discount / 100)
               : product.price;
 
-
             return (
-              <div key={product.id} className="w-[295px] pr-5 cursor-pointer hover:transform hover:scale-105 transition duration-600">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full pl-4 sm:pl-0 "
-                />
-                <h1 className="mt-4 text-xl font-bold satoshi-font">
-                  {product.name}
-                </h1>
-                {/* Rating */}
-                <div className="flex gap-x-3 mt-[14px]">
-                  <div className="flex space-x-1 mt-1">
-                    {renderStars(product.rating)}
+              <Link to={`/product/${product.id}`}>
+                <div
+                  key={product.id}
+                  className="w-[295px] mx-auto   pr-5 md:pr-14 lg:pr-14 xl:pr-5 cursor-pointer hover:transform hover:scale-105 transition duration-600"
+                >
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="w-full pl-4 sm:pl-0 "
+                  />
+                  <h1 className="mt-4 text-xl font-bold satoshi-font">
+                    {product.name}
+                  </h1>
+                  {/* Rating */}
+                  <div className="flex gap-x-3 mt-[14px]">
+                    <div className="flex space-x-1 mt-1">
+                      {renderStars(product.rating)}
+                    </div>
+                    <p>{product.rating}/5</p>
                   </div>
-                  <p>{product.rating}/5</p>
-                </div>
 
-                {/* Price Section */}
-                <div className="mt-2">
-                  {product.discount ? (
-                    <div className="flex items-center space-x-2">
-                      <span className="text-black font-bold text-xl xl:text-2xl satoshi-font">
-                        ${finalPrice.toFixed(2)}
-                      </span>
-                      <span className="text-gray-500 line-through font-bold text-xl xl:text-2xl satoshi-font">
+                  {/* Price Section */}
+                  <div className="mt-2">
+                    {product.discount ? (
+                      <div className="flex items-center space-x-2">
+                        <span className="text-black font-bold text-xl xl:text-2xl satoshi-font">
+                          ${finalPrice.toFixed(2)}
+                        </span>
+                        <span className="text-gray-500 line-through font-bold text-xl xl:text-2xl satoshi-font">
+                          ${product.price.toFixed(2)}
+                        </span>
+
+                        <span className=" text-green-600 font-medium  text-[10px] xl:text-xs ">
+                          ({product.discount}% OFF)
+                        </span>
+                      </div>
+                    ) : (
+                      <div className="text-black font-bold text-xl xl:text-2xl satoshi-font">
                         ${product.price.toFixed(2)}
-                      </span>
-
-                      <span className=" text-green-600 font-medium  text-[10px] xl:text-xs ">
-                        ({product.discount}% OFF)
-                      </span>
-                    </div>
-                  ) : (
-                    <div className="text-black font-bold text-xl xl:text-2xl satoshi-font">
-                      ${product.price.toFixed(2)}
-                    </div>
-                  )}
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </Slider>

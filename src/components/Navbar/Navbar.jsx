@@ -1,75 +1,98 @@
+// src/components/Navbar/Navbar.jsx
 import React from "react";
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 import logo from "../../assets/logo.png";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { IoIosSearch } from "react-icons/io";
 import { IoCartOutline } from "react-icons/io5";
 import { FaRegUser } from "react-icons/fa";
-import { FaBars } from "react-icons/fa";
-const Navbar = () => {
+
+export default function Navbar() {
+  const cartCount = useSelector((state) =>
+    state.cart.cart.reduce((sum, item) => sum + item.quantity, 0)
+  );
+
   return (
-    <div className="navbar  px-6 lg:px-24 py-4">
-      {/* Start: Mobile menu + logo */}
-      <div className="navbar-start">
-        {/* Mobile dropdown menu */}
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className=" lg:hidden">
-<FaBars className="text-2xl" />
+    <div className="bg-white px-4 py-2 shadow">
+      <div className="container mx-auto flex items-center justify-between">
+        {/* Logo (20%) */}
+        <div className="flex-[2] flex items-center">
+          {/* Mobile Dropdown */}
+          <div className="dropdown lg:hidden mr-2">
+            <label tabIndex={0} className="btn btn-ghost p-0 m-0">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52"
+            >
+              <li className="text-base satoshi-font"><Link to="/shop">Shop</Link></li>
+              <li className="text-base satoshi-font"><Link to="/onsell">On Sell</Link></li>
+              <li className="text-base satoshi-font"><Link to="/newarrivals">New Arrivals</Link></li>
+              <li className="text-base satoshi-font"><Link to="/brands">Brands</Link></li>
+            </ul>
           </div>
-          {/* Mobile nav items */}
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
-            <li>
-              <a className="flex justify-between">
-                Shop <MdKeyboardArrowDown />
-              </a>
+          <Link to="/">
+            <img src={logo} alt="Shop logo" className="h-8" />
+          </Link>
+        </div>
+
+        {/* Menu (45%) */}
+        <div className="hidden lg:flex flex-[4.5] justify-center">
+          <ul className="menu menu-horizontal px-1 space-x-6">
+            <li className="text-base satoshi-font">
+              <Link to="/shop" className="flex items-center">
+                Shop <MdKeyboardArrowDown className="ml-1" />
+              </Link>
             </li>
-            <li><a>On Sell</a></li>
-            <li><a>New Arrivals</a></li>
-            <li><a>Brands</a></li>
+            <li className="text-base satoshi-font"><Link to="/onsell">On Sell</Link></li>
+            <li className="text-base satoshi-font"><Link to="/newarrivals">New Arrivals</Link></li>
+            <li className="text-base satoshi-font"><Link to="/brands">Brands</Link></li>
           </ul>
         </div>
 
-        {/* Logo */}
-        <img src={logo} alt="logo.png" className="" />
-      </div>
+        {/* End Section (35%) */}
+        <div className="flex-[3.5] flex items-center justify-end gap-4">
+          {/* Search (only medium and up) */}
+          <div className="hidden md:flex items-center bg-gray-100 rounded-3xl px-2 py-1 w-full max-w-sm">
+            <IoIosSearch size={20} />
+            <input
+              type="search"
+              placeholder="Search Products"
+              className="bg-transparent outline-none px-2 satoshi-font text-base w-full"
+            />
+          </div>
 
-      {/* Center: Desktop menu */}
-      <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 satoshi-font text-base gap-4">
-          <li>
-            <a className="flex items-center gap-1">
-              Shop <MdKeyboardArrowDown />
-            </a>
-          </li>
-          <li><a>On Sell</a></li>
-          <li><a>New Arrivals</a></li>
-          <li><a>Brands</a></li>
-        </ul>
-      </div>
+          {/* Cart */}
+          <Link to="/cart" className="relative">
+            <IoCartOutline size={24} />
+            {cartCount > 0 && (
+              <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center">
+                {cartCount}
+              </span>
+            )}
+          </Link>
 
-      {/* End: Search, Cart, User */}
-      <div className="navbar-end flex items-center gap-4">
-        {/* Search bar */}
-        <div className="relative hidden lg:block">
-          <input
-            type="search"
-            placeholder="Search products"
-            className="w-[320px] xl:w-[450px] h-10 px-11 py-2 bg-[#F0F0F0] rounded-3xl text-sm"
-          />
-          <button type="submit" className="absolute top-2.5 left-4">
-            <IoIosSearch className="text-xl text-gray-400" />
-          </button>
+          {/* Profile */}
+          <Link to="/profile">
+            <FaRegUser size={24} />
+          </Link>
         </div>
-
-        {/* Cart icon */}
-        <IoCartOutline className="text-2xl cursor-pointer" />
-
-        {/* User icon */}
-        <FaRegUser className="text-2xl cursor-pointer" />
       </div>
     </div>
   );
-};
-
-export default Navbar;
+}
