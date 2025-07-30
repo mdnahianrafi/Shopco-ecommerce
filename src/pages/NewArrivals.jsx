@@ -69,7 +69,7 @@ const NewArrival = () => {
 
           return (
             <>
-              <Link to={`product/${product.id}`}>
+          
                 <div
                   key={product.id}
                   className="w-[295px] mt-5 pr-5 md:pr-14 lg:pr-14 xl:pr-5 hover:transform hover:scale-105 transition duration-600"
@@ -135,7 +135,7 @@ const NewArrival = () => {
                     </button>
                   </div>
                 </div>
-              </Link>
+      
             </>
           );
         })}

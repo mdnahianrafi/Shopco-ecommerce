@@ -86,7 +86,7 @@ export default function LoginPage() {
             type="submit"
             className="w-full py-3 bg-black text-white rounded-full satoshi-font hover:bg-gray-800 transition"
           >
-            Sign In
+           Log In
           </button>
         </form>
 
