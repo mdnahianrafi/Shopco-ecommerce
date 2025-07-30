@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import { ShopContext } from "../../contexts/ShopContext";
 import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import all_product from "../../assets/Data/productData";
+
 
 const TopSelling = () => {
   const { all_product,top_selling, renderStars } = useContext(ShopContext);
@@ -55,25 +55,25 @@ const TopSelling = () => {
   };
 
   return (
-    <div className="container mx-auto  pt-[86px] pb-16 bg-white min-h-[400px]">
+    <div className="container mx-auto pt-[86px] pb-16 bg-white min-h-[400px]">
       <h1 className="text-center text-4xl md:text-5xl font-bold mb-8">Top Selling</h1>
-      <div className="pt-14 pb-10 slider-container">
-        <Slider {...settings} className="relative overflow-hidden">
+      <div className="pt-14 pb-10">
+        <Slider {...settings} className=" ">
           {top_selling.map((product) => {
             const finalPrice = product.discount
               ? product.price - product.price * (product.discount / 100)
               : product.price;
 
             return (
-              <Link to={`/product/${product.id}`}>
+              <Link to={`product/${product.id}`}>
                 <div
                   key={product.id}
-                  className="w-[295px] mx-auto  pr-5 md:pr-14 lg:pr-14 xl:pr-5 cursor-pointer hover:transform hover:scale-105 transition duration-600"
+                  className="w-[295px] mx-auto  pr-5 md:pr-14 lg:pr-14 xl:pr-5 hover:transform hover:scale-105 transition duration-600 "
                 >
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full pl-4 sm:pl-0 "
+                    className="w-full pl-4 sm:pl-0 img-fluid"
                   />
                   <h1 className="mt-4 text-xl font-bold satoshi-font">
                     {product.name}
@@ -114,10 +114,12 @@ const TopSelling = () => {
         </Slider>
       </div>
 
-      <div className="flex justify-center">
-        <button className=" mt-3 xl:mt-11 py-5 px-16 xl:px-20 border-1 border-white rounded-full text-base font-medium satoshi=font cursor-pointer bg-slate-100 active:bg-white shadow-lg active:shadow-xl/30">
+      <div className="flex justify-center  items-center">
+<Link to='/shop'>
+        <button className="py-5 px-16 xl:px-20 border border-gray-300 text-base font-medium satoshi-font cursor-pointer rounded-full bg-slate-100 active:bg-white shadow-lg active:shadow-xl/30">
           View All
         </button>
+</Link>
       </div>
     </div>
   );
