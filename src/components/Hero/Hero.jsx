@@ -8,6 +8,7 @@ import zara from "../../assets/zara.png";
 import gucci from "../../assets/gucci.png";
 import prada from "../../assets/prada.png";
 import calvinKlein from "../../assets/clavinKlein.png";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -24,9 +25,12 @@ const Hero = () => {
               style.
             </p>
             <div className="flex justify-center md:justify-start">
-              <button className="my-4 ml-1 sm:ml-0 w-80 lg:w-52 h-[52px] bg-black text-white text-base rounded-4xl satoshi-font cursor-pointer shadow-xl active:shadow-xl/20">
-                Shop Now
-              </button>
+              <Link to="/shop">
+                {" "}
+                <button className="my-4 ml-1 sm:ml-0 w-80 lg:w-52 h-[52px] bg-black text-white text-base rounded-4xl satoshi-font cursor-pointer shadow-xl active:shadow-xl/20">
+                  Shop Now
+                </button>
+              </Link>
             </div>
 
             {/* CountUp stats */}
@@ -86,11 +90,31 @@ const Hero = () => {
       {/* Brand Logos Section */}
       <div className="w-full py-6 lg:py-10 bg-black">
         <div className="container mx-auto flex flex-wrap justify-between">
-          <img src={versace} alt="versace.png" className="mt-6 sm:mt-2 cursor-pointer" />
-          <img src={zara} alt="zara.png" className="mt-6 sm:mt-2 cursor-pointer" />
-          <img src={gucci} alt="gucci.png" className="mt-6 sm:mt-2 cursor-pointer" />
-          <img src={prada} alt="prada.png" className="mt-6 sm:mt-2 cursor-pointer" />
-          <img src={calvinKlein} alt="calvinKlein.png" className="mt-6 lg:mt-0 cursor-pointer" />
+          <img
+            src={versace}
+            alt="versace.png"
+            className="mt-6 sm:mt-2 cursor-pointer"
+          />
+          <img
+            src={zara}
+            alt="zara.png"
+            className="mt-6 sm:mt-2 cursor-pointer"
+          />
+          <img
+            src={gucci}
+            alt="gucci.png"
+            className="mt-6 sm:mt-2 cursor-pointer"
+          />
+          <img
+            src={prada}
+            alt="prada.png"
+            className="mt-6 sm:mt-2 cursor-pointer"
+          />
+          <img
+            src={calvinKlein}
+            alt="calvinKlein.png"
+            className="mt-6 lg:mt-0 cursor-pointer"
+          />
         </div>
       </div>
     </>
