@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { RxCross1 } from "react-icons/rx";
+import { Link } from "react-router-dom";
 const SignupBanner = () => {
   const [visible, setVisible] = useState(false); // initially hidden
 
@@ -28,7 +29,7 @@ if (!visible) return null;
   
       </p>
       <p className=" text-xl  font-light satoshi-font">
-        📝 Sign up now to get 20% now <span className="font-bold text-text-">Sign up Now</span>
+        📝 Sign up now to get 20% now <Link to='/signup' ><span className="font-bold text-text-">Sign up Now</span></Link>
       </p>
       <button onClick={handleClose} className="pr-20 text-3xl font-bold hover:text-red-600 cursor-pointer">
        <RxCross1 />

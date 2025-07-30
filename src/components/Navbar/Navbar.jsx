@@ -88,7 +88,7 @@ export default function Navbar() {
           </Link>
 
           {/* Profile */}
-          <Link to="/profile">
+          <Link to="/dashboard">
             <FaRegUser size={24} />
           </Link>
         </div>
