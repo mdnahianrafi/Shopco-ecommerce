@@ -16,21 +16,24 @@ const cartSlice = createSlice({
       );
 
       if (existingItem) {
-        existingItem.quantity += newItem.quantity || 1;
+        //set default to 1 when quantity is missing or 0
+        existingItem.quantity += newItem.quantity || 1; 
       } else {
         state.cart.push({ ...newItem, quantity: newItem.quantity || 1 });
       }
     },
 
-    removeFromCart: (state, action) => {
-      state.cart = state.cart.filter(item =>
-        !(
-          item.id === action.payload.id &&
-          item.selectedColor === action.payload.selectedColor &&
-          item.size === action.payload.size
-        )
-      );
-    },
+removeFromCart: (state, action) => {
+  const { id, selectedColor, size } = action.payload;
+  state.cart = state.cart.filter(item =>
+    !(
+      item.id === id &&
+      item.selectedColor === selectedColor &&
+      item.size === size
+    )
+  );
+},
+
 
     // ADD THESE NEW REDUCERS
     incrementQuantity: (state, action) => {

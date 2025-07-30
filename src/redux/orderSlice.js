@@ -36,6 +36,7 @@ const orderSlice = createSlice({
       state.byUser[username].push(newOrder);
     },
 
+    // for optimized runtime its better 
     cancelOrder: (state, action) => {
       const { username, orderId } = action.payload;
       if (state.byUser[username]) {
@@ -44,6 +45,29 @@ const orderSlice = createSlice({
         );
       }
     },
+
+
+    // for optimized memory its better
+//     cancelOrder: (state, action) => {
+//   const { username, orderId } = action.payload;
+
+//   // Check if the user exists in the order state
+//   if (state.byUser[username]) {
+//     // Filter out the order to cancel
+//     const updatedOrders = state.byUser[username].filter(
+//       (order) => order.id !== orderId
+//     );
+
+//     // If the user has remaining orders, update the array
+//     if (updatedOrders.length > 0) {
+//       state.byUser[username] = updatedOrders;
+//     } else {
+//       // Otherwise, remove the username key entirely to keep the state clean
+//       delete state.byUser[username];
+//     }
+//   }
+// }
+
   },
 });
 
