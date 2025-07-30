@@ -63,10 +63,13 @@ const OnSale = () => {
 
   return (
     <div className="container mx-auto pt-[86px] pb-20 lg:pb-36 bg-white min-h-[400px]">
-      <h1 className="text-center text-4xl md:text-5xl font-bold mb-8">On Sale</h1>
+      <h1 className="text-center text-4xl md:text-5xl font-bold mb-8">
+        On Sale
+      </h1>
       <div className="pt-14 pb-10 flex justify-center flex-wrap gap-x-4 gap-y-3 xl:gap-y-5">
         {discountedProducts.map((product) => {
-          const finalPrice = product.price - product.price * (product.discount / 100);
+          const finalPrice =
+            product.price - product.price * (product.discount / 100);
 
           return (
             <div
@@ -79,11 +82,15 @@ const OnSale = () => {
                   alt={product.name}
                   className="w-full pl-4 sm:pl-0 img-fluid"
                 />
-                <h1 className="mt-4 text-xl font-bold satoshi-font">{product.name}</h1>
+                <h1 className="mt-4 text-xl font-bold satoshi-font">
+                  {product.name}
+                </h1>
 
                 {/* Rating */}
                 <div className="flex gap-x-3 mt-[14px]">
-                  <div className="flex space-x-1 mt-1">{renderStars(product.rating)}</div>
+                  <div className="flex space-x-1 mt-1">
+                    {renderStars(product.rating)}
+                  </div>
                   <p>{product.rating}/5</p>
                 </div>
 
@@ -115,6 +122,7 @@ const OnSale = () => {
                         image: product.image,
                         quantity: 1,
                         selectedColor: product.color || "default",
+                        discount: product.discount , // ✅ Add this line
                       })
                     )
                   }
@@ -127,7 +135,9 @@ const OnSale = () => {
           );
         })}
       </div>
-      <h1 className="my-5 text-3xl md:text-4xl text-center">All Caught Up 😊</h1>
+      <h1 className="my-5 text-3xl md:text-4xl text-center">
+        All Caught Up 😊
+      </h1>
     </div>
   );
 };
