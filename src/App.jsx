@@ -8,6 +8,10 @@ import Footer from "./components/Footer/Footer";
 import ProductDescriptionPage from "./pages/ProductDescriptionPage";
 import Cart from "./pages/Cart"
 import Shop from "./pages/Shop"
+import NewArrivals from "./pages/NewArrivals"
+import OnSale from "./pages/OnSale"
+import Brands from "./pages/Brands"
+import ScrollToTop from "./components/utils/ScroolToTop"
 function App() {
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", "light");
@@ -17,6 +21,7 @@ function App() {
     <>
 <ShopContextProvider>
   <BrowserRouter>
+  <ScrollToTop/>
   <SignupBar/>
 <Navbar/>
 <Routes>
@@ -24,6 +29,10 @@ function App() {
   <Route path="/product/:id" element={ <ProductDescriptionPage/> }/>
   <Route path="/shop" element={ <Shop/> }/>
   <Route path="/cart" element ={ <Cart/> }/>
+  <Route path="/newarrivals" element={ <NewArrivals/> }/>
+  <Route path="/onsale" element={ <OnSale/> }/>
+  <Route path="/brands" element={ <Brands/> }/>
+  
 </Routes>
 <Footer/>
 </BrowserRouter>

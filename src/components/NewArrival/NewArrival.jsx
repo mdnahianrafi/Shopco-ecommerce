@@ -44,7 +44,7 @@ const NewArrival = () => {
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 460,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -55,9 +55,9 @@ const NewArrival = () => {
 
   return (
     <div className="container mx-auto pt-[86px] pb-16 bg-white min-h-[400px]">
-      <h1 className="text-center text-5xl font-bold mb-8">New Arrivals</h1>
+      <h1 className="text-center text-4xl md:text-5xl font-bold mb-8">New Arrivals</h1>
       <div className="pt-14 pb-10">
-        <Slider {...settings} className="relative overflow-hidden">
+        <Slider {...settings} className=" ">
           {new_arrivals.map((product) => {
             const finalPrice = product.discount
               ? product.price - product.price * (product.discount / 100)
@@ -114,9 +114,11 @@ const NewArrival = () => {
       </div>
 
       <div className="flex justify-center  items-center">
-        <button className="py-5 px-16 xl:px-20 border border-gray-300 text-base font-medium satoshi-font cursor-pointer rounded-full active:bg-slate-100 active:shadow-lg">
+<Link to='/newarrivals'>
+        <button className="py-5 px-16 xl:px-20 border border-gray-300 text-base font-medium satoshi-font cursor-pointer rounded-full bg-slate-100 active:bg-white shadow-lg active:shadow-xl/30">
           View All
         </button>
+</Link>
       </div>
     </div>
   );

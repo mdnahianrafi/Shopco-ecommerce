@@ -45,7 +45,7 @@ const TopSelling = () => {
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: 460,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
@@ -55,8 +55,8 @@ const TopSelling = () => {
   };
 
   return (
-    <div className="container mx-auto pt-[86px] pb-16 bg-white min-h-[400px]">
-      <h1 className="text-center text-5xl font-bold mb-8">Top Selling</h1>
+    <div className="container mx-auto  pt-[86px] pb-16 bg-white min-h-[400px]">
+      <h1 className="text-center text-4xl md:text-5xl font-bold mb-8">Top Selling</h1>
       <div className="pt-14 pb-10 slider-container">
         <Slider {...settings} className="relative overflow-hidden">
           {top_selling.map((product) => {
@@ -68,7 +68,7 @@ const TopSelling = () => {
               <Link to={`/product/${product.id}`}>
                 <div
                   key={product.id}
-                  className="w-[295px] mx-auto   pr-5 md:pr-14 lg:pr-14 xl:pr-5 cursor-pointer hover:transform hover:scale-105 transition duration-600"
+                  className="w-[295px] mx-auto  pr-5 md:pr-14 lg:pr-14 xl:pr-5 cursor-pointer hover:transform hover:scale-105 transition duration-600"
                 >
                   <img
                     src={product.image}
@@ -115,7 +115,7 @@ const TopSelling = () => {
       </div>
 
       <div className="flex justify-center">
-        <button className=" mt-3 xl:mt-11 py-5 px-16 xl:px-20 border-1 border-gray-300 rounded-full text-base font-medium satoshi=font cursor-pointer active:bg-slate-100 active:shadow-lg">
+        <button className=" mt-3 xl:mt-11 py-5 px-16 xl:px-20 border-1 border-white rounded-full text-base font-medium satoshi=font cursor-pointer bg-slate-100 active:bg-white shadow-lg active:shadow-xl/30">
           View All
         </button>
       </div>

@@ -26,14 +26,14 @@ const ProductDescriptionPage = () => {
   ];
 
   const handleAddToCart = () => {
-    dispatch(
-      addToCart({
-        ...product,
-        quantity,
-        selectedColor,
-        size,
-      })
-    );
+  dispatch(
+    addToCart({
+      ...product,
+      quantity,
+      selectedColor,
+      size,
+    })
+  );
   };
 
   const increaseQuantity = () => {
@@ -160,6 +160,7 @@ const ProductDescriptionPage = () => {
       quantity={quantity}
       increaseQuantity={increaseQuantity}
       decreaseQuantity={decreaseQuantity}
+      className='w-full justify-center px-5 py-2'
     />
             </div>
             <div className="w-full sm:w-2/3  mt-5 sm:mt-0 md:mt-5 xl:mt-0 pr-5">

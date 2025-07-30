@@ -41,7 +41,7 @@ export default function Navbar() {
               className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-white rounded-box w-52"
             >
               <li className="text-base satoshi-font"><Link to="/shop">Shop</Link></li>
-              <li className="text-base satoshi-font"><Link to="/onsell">On Sell</Link></li>
+              <li className="text-base satoshi-font"><Link to="/onsale">On Sale</Link></li>
               <li className="text-base satoshi-font"><Link to="/newarrivals">New Arrivals</Link></li>
               <li className="text-base satoshi-font"><Link to="/brands">Brands</Link></li>
             </ul>
@@ -59,7 +59,7 @@ export default function Navbar() {
                 Shop <MdKeyboardArrowDown className="ml-1" />
               </Link>
             </li>
-            <li className="text-base satoshi-font"><Link to="/onsell">On Sell</Link></li>
+            <li className="text-base satoshi-font"><Link to="/onsale">On Sale</Link></li>
             <li className="text-base satoshi-font"><Link to="/newarrivals">New Arrivals</Link></li>
             <li className="text-base satoshi-font"><Link to="/brands">Brands</Link></li>
           </ul>

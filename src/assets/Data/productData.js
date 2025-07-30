@@ -394,7 +394,8 @@ import p41 from "../product41.jpeg";
         price: 1000,
         rating : 5.0 ,
         category: "gym" ,
-        image: p41
+        image: p41,
+      
     },
 
 ];
