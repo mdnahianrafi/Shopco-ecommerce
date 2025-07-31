@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { login } from "../redux/userSlice";
 import { useNavigate, Link } from "react-router-dom";
 import { FiEye, FiEyeOff } from "react-icons/fi";
+import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 
 export default function LoginPage() {
   const dispatch = useDispatch();
@@ -45,7 +46,8 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="py-20">
+    <div className="container mx-auto py-20">
+      <Breadcrumbs/>
       <div className="container mx-auto max-w-md py-20 px-8 mb-20 border-2 border-gray-300 rounded-3xl">
         <h1 className="text-center text-3xl font-bold integral-font mb-10">
           Log In

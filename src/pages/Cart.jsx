@@ -11,6 +11,7 @@ import {
   clearCart,
 } from "../redux/cartSlice";
 import { placeOrder } from "../redux/orderSlice";
+import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -74,6 +75,7 @@ const handleCheckout = () => {
 
   return (
     <div className="container mx-auto pt-7 pb-20">
+      <Breadcrumbs/>
       <h2 className="text-2xl lg:text-[40px] font-bold integral-font mb-6">
         Your Shopping Cart
       </h2>

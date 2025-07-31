@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateProfile, logout } from "../redux/userSlice";
 import { cancelOrder } from "../redux/orderSlice";
 import { useNavigate } from "react-router-dom";
+import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 
 export default function Dashboard() {
   const dispatch = useDispatch();
@@ -36,7 +37,12 @@ export default function Dashboard() {
   };
 
   return (
-    <div className="container mx-auto py-12 flex gap-8 min-h-screen">
+    <> 
+    <div className="container mx-auto">
+      <Breadcrumbs/>
+    </div>
+        <div className="container mx-auto py-12 flex gap-8 min-h-screen">
+
       {/* Sidebar */}
       <aside className="w-1/4 border-r pr-6 space-y-6">
         <div className="space-y-1">
@@ -131,7 +137,8 @@ export default function Dashboard() {
             )}
           </div>
         ) : (
-          <div className="max-w-3xl space-y-6">
+          <div className="container mx-auto space-y-6">
+          
             <h3 className="text-2xl font-semibold integral-font mb-4">
               My Orders
             </h3>
@@ -214,5 +221,7 @@ export default function Dashboard() {
         )}
       </section>
     </div>
+    </>
+
   );
 }

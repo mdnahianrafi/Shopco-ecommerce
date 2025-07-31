@@ -35,7 +35,7 @@ const Hero = () => {
 
             {/* CountUp stats */}
             <div className="sm:mx-0 flex justify-between lg:justify-start pt-7 lg:pt-14 pb-16 lg:pb-32">
-              <div className="pr-5 sm:pr-10 border-r-2 border-gray-400">
+              <div className="pr-5 sm:pr-10 sm:border-r-2 sm:border-gray-400">
                 <div className="text-2xl lg:text-[40px] font-semibold">
                   <CountUp end={200} duration={2.75} />+
                 </div>
@@ -44,7 +44,7 @@ const Hero = () => {
                 </p>
               </div>
 
-              <div className="counter-two px-5 sm:px-10 border-r-2 border-gray-400">
+              <div className="counter-two px-5 sm:px-10 sm:border-r-2 sm:border-gray-400">
                 <div className=" text-2xl lg:text-[40px] font-semibold">
                   <CountUp end={2000} duration={2.75} />+
                 </div>

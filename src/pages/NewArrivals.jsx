@@ -7,6 +7,7 @@ import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice"; // Adjust path if different
+import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 
 const NewArrival = () => {
   const { all_product, new_arrivals, renderStars } = useContext(ShopContext);
@@ -58,6 +59,7 @@ const NewArrival = () => {
 
   return (
     <div className="container mx-auto pt-[86px] pb-20 lg:pb-36 bg-white min-h-[400px]">
+      <Breadcrumbs/>
       <h1 className="text-center text-4xl md:text-5xl font-bold mb-8">
         New Arrivals
       </h1>

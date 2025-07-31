@@ -7,6 +7,7 @@ import { FaPlus, FaMinus } from "react-icons/fa";
 import ProductTabs from "../components/ProductTabs/ProductTabs";
 import QuantityBox from "../components/utils/QuantityBox";
 import TopSelling from "../components/TopSelling/TopSelling"
+import Breadcrumbs from "../components/Breadcrumbs/Breadcrumbs";
 const ProductDescriptionPage = () => {
   const { all_product, renderStars } = useContext(ShopContext);
   const { id } = useParams();
@@ -49,7 +50,11 @@ const ProductDescriptionPage = () => {
     },[id])
   return (
     <section className="relative overflow-x-hidden pb-16  pt-10">
-      <div className="pt-7 container mx-auto flex flex-col md:flex-row gap-10">
+      <div className="container mx-auto">
+         <Breadcrumbs currentTitle={product.name} />
+      </div>
+      <div className=" container mx-auto flex flex-col md:flex-row gap-10">
+     
         {/* Left Side (Images) */}
         <div className="w-full md:w-1/2 md:mt-20">
           <div className="flex flex-col-reverse md:flex-row gap-4">
